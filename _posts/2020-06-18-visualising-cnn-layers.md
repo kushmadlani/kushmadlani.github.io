@@ -457,4 +457,4 @@ Interpretability is an increasingly important part of any Machine Learning model
 - [Towards Data Science](https://towardsdatascience.com/visual-interpretability-for-convolutional-neural-networks-2453856210ce) go through a similar visualisation for the massive VGG-net.
 
 ___
-For those interested, the Jupyter notebook for this post can be found in [this Github repo](https://github.com/kushmadlani/visualising-cnn-layers).
+For those interested, the Jupyter notebook with code for this post can be found on Github [here](https://github.com/kushmadlani/visualising-cnn-layers).
