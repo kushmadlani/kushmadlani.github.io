@@ -455,3 +455,6 @@ Interpretability is an increasingly important part of any Machine Learning model
 - For an outstanding, detailed and clear introduction to CNNs for Deep Learning, visit the [Stanford CS231n notes](https://cs231n.github.io/).
 - Distill publish a lot of work on visualisations, a good place to start is this piece on [circuits](https://distill.pub/2020/circuits/) and on [interpretability](https://distill.pub/2018/building-blocks/)
 - [Towards Data Science](https://towardsdatascience.com/visual-interpretability-for-convolutional-neural-networks-2453856210ce) go through a similar visualisation for the massive VGG-net.
+
+___
+For those interested, the Jupyter notebook for this post can be found in [this Github repo](https://github.com/kushmadlani/visualising-cnn-layers).
