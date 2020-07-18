@@ -3,6 +3,7 @@ title: 'Visualising CNN feature-maps and layer activations'
 date: 17-06-2020
 ---
 
+$e^{i\pi}=-1$ testing maths.
 Convolutional Neural Networks are the most successful deep learning architecture for Computer Vision tasks, particularly image classification. They comprise of a stack of *Convolutional layers,* *Pooling layers* and *Fully-connected layers*, which combine. 
 
 We build a simple Convolutional Neural Network in `PyTorch`, trained to recognise hand-written digits using the [MNIST](http://yann.lecun.com/exdb/mnist/) dataset and focus on examining the *Convolutional layers*. The pooling layers make the model translational invariant - something clearly important in Computer Vision.
