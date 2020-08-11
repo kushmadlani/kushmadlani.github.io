@@ -26,7 +26,7 @@ There are largely two categories for creating sparse word representations: i) in
 Regularisation in Machine Learning essentially boils down to adding a term to our loss function that induces a particular behaviour of our solution space. The most common regulariser is the $\ell_2$-norm, which takes the sum of square of each parameter of our solution. 
 
 $$
-Loss_{new}(\mathbf{w}) = Loss_{old}(\mathbf{w}) + \lambda 
+Loss_{new}(W) = Loss_{old}(W) + \lambda 
 $$
 
 It turns out that one [norm](https://medium.com/@montjoile/l0-norm-l1-norm-l2-norm-l-infinity-norm-7a7d18a4f40c) exactly describes sparsity - the $\ell_0$-norm, defined as the number of non-zero elements of a vector. Sounds great, however such a function isn't differentiable, meaning we can't use backpropagation to train our parameters. One solution, porposed in [this](https://www.ijcai.org/Proceedings/16/Papers/414.pdf) paper by Sun et al. is to use the $\ell_1$-norm as a differentiable approximation to the $\ell_0$-norm. A challenge of optimisation using this regulariser is that SGD fails not produce sparse solutions since the norm is not scale invariant; the solution presented uses Regularised Dual Averaging to address this issue.
