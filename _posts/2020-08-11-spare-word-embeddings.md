@@ -26,7 +26,7 @@ There are largely two categories for creating sparse word representations: i) in
 Regularisation in Machine Learning essentially boils down to adding a term to our loss function that induces a particular behaviour of our solution space. The most common regulariser is the $\ell_2$-norm, which takes the sum of square of each parameter of our solution. 
 
 $$
-Loss_{new}(W) = Loss_{old}(W) + \lambda 
+Loss_{new}(W) = Loss_{old}(W) + \lambda \sum_i w_i^2
 $$
 
 It turns out that one [norm](https://medium.com/@montjoile/l0-norm-l1-norm-l2-norm-l-infinity-norm-7a7d18a4f40c) exactly describes sparsity - the $\ell_0$-norm, defined as the number of non-zero elements of a vector. Sounds great, however such a function isn't differentiable, meaning we can't use backpropagation to train our parameters. One solution, porposed in [this](https://www.ijcai.org/Proceedings/16/Papers/414.pdf) paper by Sun et al. is to use the $\ell_1$-norm as a differentiable approximation to the $\ell_0$-norm. A challenge of optimisation using this regulariser is that SGD fails not produce sparse solutions since the norm is not scale invariant; the solution presented uses Regularised Dual Averaging to address this issue.
@@ -38,6 +38,9 @@ H_S(W) = \frac{\sum_i |w_i|^2}{\sum_i w_i^2}
 $$
 
 Our proof-of-concept method, using the Hoyer-Square regulariser on the skip Skip-gram model to train interpretable embeddings - check out our repo *WAKU* [here](https://github.com/apappu97/WAKU).
+$$
+Loss_{new}(W) = Loss_{old}(W) + \lambda H_S(W)
+$$
 
 ### Post-hoc processing
 This is a somewhat more explored & practical category, since training high quality embeddings from scratch can be expensive (high quality $\implies$ large training corpus + even larger training time) so transforming readily available pre-trained embeddings into sparse & interpertable versions of themselves can be preffered. A couple of examples of such methods are one by [Faruqui et al.](https://arxiv.org/pdf/1506.02004.pdf) that uses sparse coding & SPINE from [Subramanian et al.](https://arxiv.org/pdf/1711.08792.pdf), which employs a denoising $k$-sparse autoencoder, trained to minimise a loss function whcih includes a reconstruction loss term and penalty terms for lock of sparsity.
