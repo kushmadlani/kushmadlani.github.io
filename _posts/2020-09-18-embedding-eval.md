@@ -5,8 +5,6 @@ date: 17-09-2020
 
 <!-- *This post follows [Part 1](https://kushmadlani.github.io/spare-word-embeddings/) which introduces word embeddings, sparsity and ways to induce it.* -->
 
-*Find our word embedding evaluation package called __embedtrics__ [here](https://github.com/kushmadlani/embedtrics)*
-
 So you've got a set of word embeddings, sparse or dense, trained by some deep learning algorithm such as skip-gram or CBOW - how do you figure out if they're any good? Well, we generally care about three things when assessing the quality of word embeddings:
 * Interpretability, for example, are the embedding dimensions coherent?
 * Expressive power, for example, is the similarity between words captured?
