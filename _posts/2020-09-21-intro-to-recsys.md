@@ -21,7 +21,7 @@ Formally we can describe MF as follows, using the traditional indexing letters f
 - $x_u \in \mathbb{R}^f$: latent factor for user $u$
 - $y_i \in \mathbb{R}^f$: latent factor for item $i$
 
-Here, its important to note that $R$ is very often *sparse*, leading to many implications for both algorithm design and training. **Generally we can frame the goal of a recommender system is to reproduce a dense $\tilde{R}$ from sparse training data $R$ that `fills in' the missing user-item interactions.*
+Here, its important to note that $R$ is very often *sparse*, leading to many implications for both algorithm design and training. *Generally we can frame the goal of a recommender system is to reproduce a dense $\tilde{R}$ from sparse training data $R$ that `fills in' the missing user-item interactions.*
 
 Framed this way, a typical formulation of MF looks to factorise $R$ into the product of two smaller dense matrices, with predictions made by taking an inner product: $\hat{r}_{ui}=x_u^T y_i$. Learning is achieved by minimising the following loss function where $\ell_2$ regularisation terms have been added to avoid overfitting:
 
@@ -46,7 +46,7 @@ What's different about implicit feedback? As outlined in the seminal [paper](htt
 
 - *Preference vs Confidence*. The numerical value of explicit feedback represents preference (a star rating 1-5), whilst in the implicit setting feedback indicates confidence. A high count can be deceptive since, for example, frequency of events matters greatly. In the \textit{Kindred} dataset some events occur every week (e.g. Premier League) whilst some occur rarely (e.g. Elections). One-time events can occur by nature of the item, such as an Athletics meet that happens twice a year, however in general, a high count for a recurring event is more likely to reflect a positive user opinion.
 
-## Evaluation
+## Evaluation
 The best, perhaps only true, evaluation of a recommender system lies online in production, when users are presented with live recommendations and their reactions are tracked. Online evaluation may involve A/B-testing or multivariate testing to tune a model based on metrics such as click-through rates or conversation rates.  However, in the absence of such processes, as is often the case in academic research, there exist several metrics that recommender systems can be optimised for depending on the formulation of the task and form of feedback available. 
 
 For offline evaluation with explicit feedback the task of rating prediction is most common, where a model aims to predict the (often discrete) rating given by a user to an item. Of the observed ratings, a portion are held back to form a test set whereby predicted ratings are then evaluated using metrics such as mean absolute error (MAE) or root mean squared error (RMSE), as in the Netflix Prize.
