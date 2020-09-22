@@ -1,6 +1,7 @@
 ---
 title: 'Visualising CNN feature-maps and layer activations'
 date: 17-06-2020
+classes: wide
 ---
 
 Convolutional Neural Networks are the most successful deep learning architecture for Computer Vision tasks, particularly image classification. They comprise of a stack of *Convolutional layers,* *Pooling layers* and *Fully-connected layers*, which combine. 
