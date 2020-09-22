@@ -3,6 +3,7 @@ title: 'Sparse Word Embeddings'
 date: 11-08-2020
 header:
   image: "/images/embeddings/word_vectors.png"
+classes: wide
 ---
 In this post, I'll give a brief introduction to word embeddings, how they're trained, why sparsity is important and how we can induce it.
 

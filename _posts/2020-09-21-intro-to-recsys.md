@@ -1,6 +1,7 @@
 ---
 title: 'Recommender Systems: a brief introduction'
 date: 17-09-2020
+classes: wide
 ---
 
 ## Why?

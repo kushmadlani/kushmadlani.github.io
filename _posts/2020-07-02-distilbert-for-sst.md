@@ -3,6 +3,7 @@ title: 'Sentiment Analysis with Transformers'
 date: 17-06-2020
 header:
   image: "/images/bert_for_sst/transformers_cover.jpg"
+classes: wide
 ---
 The Transformer is the latest advance in Deep Learning architectures that has driven most state-of-the-art progress in NLP since it was first presented in ['Attention is All You Need'](https://arxiv.org/abs/1706.03762). Since then, ever and ever [larger](https://arxiv.org/abs/2006.16668) models are being made, with number of parameters shooting into the billions. (side-note: I think we're inflection point in ML with OpenAI's release of their API - everyone now has easy access to these state-of-the-art language models, we're gonna see an explosion of use-cases + value creation as these tools get democratised)
 

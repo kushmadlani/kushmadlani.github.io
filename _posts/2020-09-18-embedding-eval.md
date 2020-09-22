@@ -1,6 +1,7 @@
 ---
 title: 'Evaluating Word Embeddings'
 date: 17-09-2020
+classes: wide
 ---
 
 So you've got a set of word embeddings, sparse or dense, trained by some deep learning algorithm such as skip-gram or CBOW - how do you figure out if they're any good? Well, we generally care about three things when assessing the quality of word embeddings:

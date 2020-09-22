@@ -1,6 +1,7 @@
 ---
 title: 'Machine Learning: Starting from Zero'
 date: 15-07-2020
+classes: wide
 ---
 
 Just over a year and a half ago I was sitting at a desk trading stocks, knowing close to nothing about Machine Learning and having last coded in a bit of Matlab 4 years earlier at university. This post hopes to give some resources for someone wanting to make a start on their Machine Learning journey, like I did, starting from zero. 
