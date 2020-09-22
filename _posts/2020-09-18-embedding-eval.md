@@ -20,15 +20,11 @@ where *jodel* is clearly the intruder word, describing an aircraft company, whil
 
 Standard word intrusion uses a human judge to identify the intruder word. However, we use the automatic metric proposed by [1](https://www.ijcai.org/Proceedings/16/Papers/414.pdf) that captures the intuition of the task without needing manual assessment: *"the intruder word should be dissimilar to the top 5 words while those top words should be similar to each other."* We measure the ratio of the distance between the intruder word and top words to the distance between the top words themselves. A higher ratio corresponds to better interpretability since it indicates that the intrusion word is far away from the top words in embedding space and so can be easily identified. Formally we calculate:
 
-$$
-DistRatio = \frac{1}{d} \sum_{i=1}^d  \frac{InterDist_i}{IntraDist_i}
-$$
-$$
-InterDist_i = \sum_{w_j \in top_i(i)} \frac{dist(w_j, w_{b_i})}{k}
-$$
-$$
-IntraDist_i = \sum_{w_j \in top_k(i)} \sum_{w_k \in \mathrm{top}_k(i), w_k \neq w_j} \frac{\mathrm{dist}(w_j, w_{k})}{k(k-1)}
-$$
+\begin{align}
+DistRatio &= \frac{1}{d} \sum_{i=1}^d  \frac{InterDist_i}{IntraDist_i} \\
+InterDist_i &= \sum_{w_j \in top_i(i)} \frac{dist(w_j, w_{b_i})}{k} \\
+IntraDist_i &= \sum_{w_j \in top_k(i)} \sum_{w_k \in \mathrm{top}_k(i), w_k \neq w_j} \frac{\mathrm{dist}(w_j, w_{k})}{k(k-1)}
+\end{align}
 
 where $top_k(i)$ is the top $k$ words on dimension $i$, $w_{b_i}$ is the intrusion word for dimension $i$ and $\mathrm{dist}(w_j, w_k)$ denotes the Euclidean distance between word $w_j$ and $w_k$. 
 $\mathrm{IntraDist}_i$ is the average distance between the top $k$ words in dimension $i$ and $\mathrm{InterDist}_i$ denotes the average distance between the intruder word and top words on that dimension. We set $k=5$ and average the result over ten runs since there is stochasticity in the selection of intruder words.
