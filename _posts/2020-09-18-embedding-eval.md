@@ -4,6 +4,8 @@ date: 17-09-2020
 classes: wide
 ---
 
+*For an introduction to word embeddings and why sparsity is important check out my previous post [here](https://kushmadlani.github.io/spare-word-embeddings/).*
+
 So you've got a set of word embeddings, sparse or dense, trained by some deep learning algorithm such as skip-gram or CBOW - how do you figure out if they're any good? Well, we generally care about three things when assessing the quality of word embeddings:
 * Interpretability, for example, are the embedding dimensions coherent?
 * Expressive power, for example, is the similarity between words captured?
