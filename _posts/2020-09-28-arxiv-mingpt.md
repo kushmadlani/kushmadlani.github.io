@@ -1,16 +1,18 @@
 ---
-title: 'arXiv + GPT: a transformer for producing Machine Learning abstracts'
+title: 'arXivGPT: a transformer for producing Machine Learning abstracts'
 date: 28-09-2020
 classes: wide
 ---
 
 *Code & notebook for this post can be found [here](https://github.com/kushmadlani/arxiv_minGPT/blob/master/arxiv_eda.ipynb). Check out [Part 1](https://kushmadlani.github.io/arxiv-eda/) where we introduce the dataset.*
 
-The arXiv dataset on [Kaggle](https://www.kaggle.com/Cornell-University/arxiv) provides meta-data on thousands of papers published over the past decades. In this post, we take all the abstracts from papers in the field of Machine Learning and Ariticial Intelligence then train GPT on it. We use Andrej Karpathy's [minGPT](https://github.com/karpathy/minGPT) - a PyTorch re-implementation of OpenAI's [GPT](https://github.com/openai/gpt-3) that "tries to be small, clean, interpretable and educational" (it is.)
+The release of OpenAI's GPT-3 generated much deserved buzz and excitment in Tech circles and beyond, with main-stream press reporting on the technology - whilst the theory behind the model has been around for several years, the creation of an API, releasing a beta version to some developers, was the real geniuns of the release in my mind.
 
-We train our model a single GPU available on Google Colabatory notebook and feed it some prompts to predict an entire Machine Learning abstract. Sneak preview of our fairly coherent results below!
+In this post, we explore a smaller Generative Pretrained Transformer (GPT), based of Andrej Karpathy's [minGPT](https://github.com/karpathy/minGPT) - a PyTorch re-implementation of OpenAI's [GPT](https://github.com/openai/gpt-3) that "tries to be small, clean, interpretable and educational" (it is.) We take all the abstracts from papers in the fields of Machine Learning and Ariticial Intelligence from the arXiv dataset on [Kaggle](https://www.kaggle.com/Cornell-University/arxiv) (which provides meta-data on thousands of papers published over the past decade). Our GPT is then trained on those abstracts on a single GPU available on Google Colabatory notebook.
 
-![](/images/arxiv_mingpt/sampled_abstract.png)
+Finally, we feed our trained model some prompts to predict an entire Machine Learning abstract. Sneak preview of our (fairly coherent) results below!
+
+![](/images/arxiv_mingpt/sampled_abstract.png) \\
 *Sampled abstract from the prompt 'This paper considers...'. Formatted in LaTeX with the NeurIPS template for fun :)*
 
 ## Setup
@@ -212,7 +214,7 @@ y = sample(model, x, 150, temperature=1.0, sample=True, top_k=10)[0]
 completion = ' '.join([train_dataset.itos[int(i)] for i in y])
 print(completion)
 ```
-    This paper discusses the effect of the design and implementation of a case study . Graph Neural Networks GNNs achieve remarkable performance in graph data classification tasks . In graph classification , each node of node information from labeled nodes measured nodes in a graph are connected by many , each graph represents the goal of node embedding space . Multiple graph embedding aims to create a similarity graph by representing the different graph each path graph in each graph . This information represents the embedding by learning a knowledge graph by node as the network . The goal is to design a similarity graph embedding that represents a set of entities and the entities in the graph . The nodes are generated using graph embedding techniques , which represent graph embedding methods with embedding methods , on nodes using graphs . 
+> This paper discusses the effect of the design and implementation of a case study . Graph Neural Networks GNNs achieve remarkable performance in graph data classification tasks . In graph classification , each node of node information from labeled nodes measured nodes in a graph are connected by many , each graph represents the goal of node embedding space . Multiple graph embedding aims to create a similarity graph by representing the different graph each path graph in each graph . This information represents the embedding by learning a knowledge graph by node as the network . The goal is to design a similarity graph embedding that represents a set of entities and the entities in the graph . The nodes are generated using graph embedding techniques , which represent graph embedding methods with embedding methods , on nodes using graphs . 
 
 2)
 ```python
@@ -222,7 +224,7 @@ y = sample(model, x, 200, temperature=1.0, sample=True, top_k=10)[0]
 completion = ' '.join([train_dataset.itos[int(i)] for i in y])
 print(completion)
 ```
-    Our work has focused on the use of multi modal social networks and web recommender systems , in which contain heterogeneous information and items . In this paper , we propose a multi modal data embedding framework to detect matches semantically similar contexts in order to their opinions . We show that both methods can be successfully applied to Web and document clustering tasks . EOS In this paper we study the problem of finding the rating of two and , the rating score for a given time . In particular , we use the following the following questions 1 The given answer is a certain item such that the set of at any a certain item we choose one , and use the rating , combined with the answer to answer based . We review the characteristics and compare the baselines in detail to these questions . To this end , we built a deep ranking approach for general and general and statistical analysis of some recent QA methods . EOS We consider the problem of learning a probabilistic domain , agent using data . Given a collection of Chinese e commerce , we allow a posterior over a subset of interest , and
+> Our work has focused on the use of multi modal social networks and web recommender systems , in which contain heterogeneous information and items . In this paper , we propose a multi modal data embedding framework to detect matches semantically similar contexts in order to their opinions . We show that both methods can be successfully applied to Web and document clustering tasks . EOS In this paper we study the problem of finding the rating of two and , the rating score for a given time . In particular , we use the following the following questions 1 The given answer is a certain item such that the set of at any a certain item we choose one , and use the rating , combined with the answer to answer based . We review the characteristics and compare the baselines in detail to these questions . To this end , we built a deep ranking approach for general and general and statistical analysis of some recent QA methods . EOS We consider the problem of learning a probabilistic domain , agent using data . Given a collection of Chinese e commerce , we allow a posterior over a subset of interest , and
 
 3)
 ```python
@@ -232,13 +234,13 @@ y = sample(model, x, 150, temperature=1.0, sample=True, top_k=10)[0]
 completion = ' '.join([train_dataset.itos[int(i)] for i in y])
 print(completion)
 ```
-    This paper considers the problem of finding a single optimal clustering that minimizes a specific number of disagreements i . e . , the sum of the number of observed missing edges within clusters . The objective of most promising intelligent algorithms appear to be evaluated on the basis of similarity matrix . However , most of the problems have with high probability , that they are designed for the pair of clusters are distinct from observational data . The optimal clustering must pass through a grid like time varying quality . We develop a new algorithm to learn K coordinate dictionaries , with dimensions m_k times p_k up to estimation error varepsilon_k is shown to be max_ k in K mathcal O m_kp_k 3 varepsilon_k 2 . Understanding the causes of crime is a longstanding issue in researcher's agenda , while it is a hard task to extract causality from data
+> This paper considers the problem of finding a single optimal clustering that minimizes a specific number of disagreements i . e . , the sum of the number of observed missing edges within clusters . The objective of most promising intelligent algorithms appear to be evaluated on the basis of similarity matrix . However , most of the problems have with high probability , that they are designed for the pair of clusters are distinct from observational data . The optimal clustering must pass through a grid like time varying quality . We develop a new algorithm to learn K coordinate dictionaries , with dimensions m_k times p_k up to estimation error varepsilon_k is shown to be max_ k in K mathcal O m_kp_k 3 varepsilon_k 2 . Understanding the causes of crime is a longstanding issue in researcher's agenda , while it is a hard task to extract causality from data
 
 
 Not bad for a small-ish model (10m vs 160bn for a full GPT-3!) on less than an hour training! What worked and what didn't?
 - Topics are current and relevant (expected) - GNNs, reecommender systems...
 - Most sentences are coherent.
-- Example 3 managed to get some maths in there even mentioning the time complexity of the paper's method!
+- Example 3 managed to get some maths in there even mentioning the time complexity of the paper's method which certainly impressed me.
 - EOS and punctuation a bit all over the place.
 - Abstracts aren't always consistent on a topic from start to finish.
 
