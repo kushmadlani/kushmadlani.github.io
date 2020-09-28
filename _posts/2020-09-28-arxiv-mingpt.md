@@ -1,5 +1,5 @@
 ---
-title: 'arXiv GPT: a transformer for producing Machine Learning abstracts'
+title: 'arXiv-GPT: a transformer for producing Machine Learning abstracts'
 date: 28-09-2020
 classes: wide
 ---
