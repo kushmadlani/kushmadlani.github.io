@@ -48,7 +48,7 @@ This is a somewhat more explored & practical category, since training high quali
 
 ____
 
-There you have a very quick intro to sparse Word Embeddings. Check in soon for Part 2 where I'l talk about how to *evaluate* a set of word embeddings on their expressive power and interpretability.
+There you have a very quick intro to sparse Word Embeddings. Check out [Part 2](https://kushmadlani.github.io/spare-word-embeddings/) of this series where I'l talk about how to *evaluate* a set of word embeddings on their expressive power and interpretability.
 
 ## Further reading
 - [Towards Data Science](https://towardsdatascience.com/nlp-101-word2vec-skip-gram-and-cbow-93512ee24314
